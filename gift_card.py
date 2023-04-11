@@ -1,14 +1,16 @@
 import json
 
 class Card_Manager:
-    def __init__(self, num_cards = 0, starting_balance = 0):
+    def __init__(self, num_cards = 0, starting_balance = 0, from_file = False):
         self.cards = {}
-        
-        for card_id in range(1, num_cards + 1):
-            self.cards[card_id] = starting_balance
+        if from_file:
+            self.load_cards()
+        else:
+            for card_id in range(1, num_cards + 1):
+                self.cards[card_id] = starting_balance
 
-        with open('cards_data', 'w') as f:
-            f.write(json.dumps(self.cards))
+            with open('cards_data', 'w') as f:
+                f.write(json.dumps(self.cards))
     
     def load_cards(self):
             success = False

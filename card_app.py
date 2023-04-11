@@ -1,7 +1,17 @@
 from gift_card import Card_Manager
-
+import sys
 def main():
-	manager = Card_Manager()
+	from_file = False
+	num_cards = 0
+	starting_balance = 0
+	if '-f' in sys.argv:
+		from_file = True
+	if '-n' in sys.argv:
+		num_cards = int(sys.argv[sys.argv.index('-n') + 1])
+	if '-b' in sys.argv:
+		starting_balance = int(sys.argv[sys.argv.index('-b') + 1])
+	
+	manager = Card_Manager(num_cards, starting_balance, from_file)
 	while True:
 		text = input("Enter a command: ")
 		parsed = text.split()

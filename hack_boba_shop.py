@@ -26,5 +26,5 @@ def hack_boba_shop():
             boba_shop.transfer_points(2, 1, 100)
         counter += 1
 
-# hack_boba_shop()
-# boba_shop.get_all_cards()
+hack_boba_shop()
+boba_shop.get_all_cards()
