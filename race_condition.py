@@ -10,7 +10,7 @@ def increase_by(n):
     local_copy = shared_var
     local_copy += n
 
-    
+    sleep(0.1)
     shared_var = local_copy
 
 

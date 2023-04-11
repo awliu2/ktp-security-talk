@@ -1,4 +1,3 @@
-from threading import Thread
 import json
 
 class Card_Manager:
@@ -23,10 +22,10 @@ class Card_Manager:
                     except Exception as e:
                         print(e)
 
-    
     def save_cards(self):
         with open('cards_data', 'w') as f:
             f.write(json.dumps(self.cards))
+            f.flush()
 
     def add_card(self, card_id, balance):
         self.load_cards()
@@ -42,7 +41,7 @@ class Card_Manager:
         if card not in self.cards:
             return False
         
-        self.cards.remove(card)
+        del self.cards[card]
         self.save_cards()
         return True
     
@@ -85,34 +84,8 @@ class Card_Manager:
         return True
 
     def get_all_cards(self):
+        self.load_cards()
         print('____________\n| ID | BAL |\n+----------+')
         for card in self.cards.items():
             print('| {:>2} | {:^4}|'.format(*card))
         print('+----------+')
-        
-boba_shop = Card_Manager(5)
-boba_shop.deposit(1, 100)
-boba_shop.get_all_cards()
-
-
-def hack_boba_shop():
-    counter = 0
-    for _ in range(100):
-        thread_1 = Thread(target = boba_shop.transfer_points, args=(1, 2, 100))
-        thread_2 = Thread(target = boba_shop.transfer_points, args=(1, 2, 100))
-        
-        thread_1.start()
-        thread_2.start()
-
-        thread_1.join()
-        thread_2.join()
-        
-        if (boba_shop.get_balance(1) == -100):
-            print(counter)
-            break
-        else:
-            boba_shop.transfer_points(2, 1, 100)
-        counter += 1
-
-# hack_boba_shop()
-# boba_shop.get_all_cards()
