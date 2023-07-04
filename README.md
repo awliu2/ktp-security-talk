@@ -1,6 +1,4 @@
-# KTP Lightning Talk, Computer Security
-
-## April 13th, 2023
+# KTP Lightning Talk, Computer Security, April 13th, 2023
 
 Demo files used during the presentation.
 
