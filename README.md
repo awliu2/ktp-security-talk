@@ -12,3 +12,7 @@ card_manager will generate a cards_data file.
 
 ## crib_drag
 Live demo of crib dragging, with a fixed `encrypted` message.
+
+
+## Slides
+slides used can be found [here](https://docs.google.com/presentation/d/1RXjbYWcM6_hiuHx_V09qO-nwfy2xEe026Oux6u5WXU4/edit?usp=sharing)
