@@ -5,7 +5,9 @@ Demo files used during the presentation.
 
 ## Hack Boba Shop (Race Condition)
 Simulates the [starbucks gift card race condition](https://sakurity.com/blog/2015/05/21/starbucks.html)
+
 Credit to [Nathan Ang](https://youtu.be/YSftXvy3znI)
+
 Files should run without installing any additional dependencies.
 card_manager will generate a cards_data file.
 
