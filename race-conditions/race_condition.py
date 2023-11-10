@@ -14,10 +14,10 @@ def increase_by(n):
     shared_var = local_copy
 
 
-thread_1 = Thread(target = increase_by, args=(1,))
-thread_2 = Thread(target = increase_by, args=(2,))
+thread_1 = Thread(target=increase_by, args=(1,))
+thread_2 = Thread(target=increase_by, args=(2,))
 
-# these threads run in parallel (at the same time) 
+# these threads run in parallel (at the same time)
 thread_1.start()
 thread_2.start()
 
@@ -26,4 +26,4 @@ thread_2.start()
 thread_1.join()
 thread_2.join()
 
-print(f'the final value of shared_var is {shared_var}')
+print(f"the final value of shared_var is {shared_var}")
