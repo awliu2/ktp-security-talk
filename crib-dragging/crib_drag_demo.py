@@ -1,4 +1,4 @@
-import crib_drag.crib_drag as cd
+import crib_drag as cd
 
 CLEAR = "\x1b[2K"
 
