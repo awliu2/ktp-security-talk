@@ -110,7 +110,7 @@ if __name__ == "__main__":
     # a = bytearray.fromhex(cipher_hex[0].decode())
     # b = bytearray.fromhex(cipher_hex[1].decode())
     msg1 = "Kappa Theta Pi is the Professional Technology Fraternity"
-    msg2 = "Eric Liu is actually getting hard carried by Andi"
+    msg2 = "Eric Liu is actually getting hard carried by Andi."
 
     key = gen_key(max(len(msg1), len(msg2)))
     key_hex = bytes_to_hexstring(key)
@@ -124,14 +124,12 @@ if __name__ == "__main__":
     print(f"encrypted_hexstring 1: {encrypted_hexstring1}")
     print(f"encrypted_hexstring 2: {encrypted_hexstring2}\n")
 
-    print(f"decrypted message 1: {byte_array_to_string(byte_xor(encrypted_1, key))}")
-    print(f"decrypted message 2: {byte_array_to_string(byte_xor(encrypted_2, key))}\n")
+    # print(f"decrypted message 1: {byte_array_to_string(byte_xor(encrypted_1, key))}")
+    # print(f"decrypted message 2: {byte_array_to_string(byte_xor(encrypted_2, key))}\n")
 
-    print(
-        f"extracting the key from msg1: {bytes_to_hexstring(get_key(msg1, encrypted_1))}"
-    )
-    print(
-        f"extracting the key from the msg2: {bytes_to_hexstring(get_key(msg2, encrypted_2))}"
-    )
-    # print(f"decrypted message 2: {byte_xor(b, key)}")
-    # msg2 = "The quick brown fox jumps over the lazy dog"
+    # print(
+    #     f"extracting the key from msg1: {bytes_to_hexstring(get_key(msg1, encrypted_1))}"
+    # )
+    # print(
+    #     f"extracting the key from the msg2: {bytes_to_hexstring(get_key(msg2, encrypted_2))}"
+    # )
